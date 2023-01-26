@@ -5,6 +5,8 @@ import com.cbt.utilities.StringUtility;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.Test;
 
+import java.util.concurrent.TimeUnit;
+
 public class NavigationTests {
 
 
@@ -13,6 +15,7 @@ public class NavigationTests {
 
         WebDriver driver = BrowserFactory.getDriver("chrome");
         driver.manage().window().maximize();
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
         driver.get("https://google.com");
 
@@ -45,6 +48,7 @@ public class NavigationTests {
 
         WebDriver driver = BrowserFactory.getDriver("firefox");
         driver.manage().window().maximize();
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
         driver.get("https://google.com");
 
@@ -76,6 +80,7 @@ public class NavigationTests {
 
         WebDriver driver = BrowserFactory.getDriver("edge");
         driver.manage().window().maximize();
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
         driver.get("https://google.com");
 
