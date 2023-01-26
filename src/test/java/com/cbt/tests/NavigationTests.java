@@ -7,6 +7,7 @@ import org.testng.annotations.Test;
 
 public class NavigationTests {
 
+
     @Test
     public void navigationTest_Chrome(){
 
@@ -34,6 +35,7 @@ public class NavigationTests {
         StringUtility.verifyEquals(etsyTitle,etsyTitle2);
 
 
+        driver.close();
 
 
     }
@@ -64,6 +66,8 @@ public class NavigationTests {
 
         StringUtility.verifyEquals(etsyTitle,etsyTitle2);
 
+        driver.close();
+
     }
 
     @Test
@@ -92,6 +96,8 @@ public class NavigationTests {
         String etsyTitle2 = driver.getTitle();
 
         StringUtility.verifyEquals(etsyTitle,etsyTitle2);
+
+        driver.close();
 
     }
 
