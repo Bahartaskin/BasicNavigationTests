@@ -3,15 +3,12 @@ package com.cbt.tests;
 import com.cbt.utilities.BrowserFactory;
 import com.cbt.utilities.StringUtility;
 import org.openqa.selenium.WebDriver;
-import org.testng.annotations.Test;
 
 import java.util.concurrent.TimeUnit;
 
 public class NavigationTests {
 
-
-    @Test
-    public void navigationTest_Chrome(){
+    public static void main(String[] args) {
 
         WebDriver driver = BrowserFactory.getDriver("chrome");
         driver.manage().window().maximize();
@@ -19,90 +16,89 @@ public class NavigationTests {
 
         driver.get("https://google.com");
 
-        String googleTitle = driver.getTitle();
+        String googleTitleChrome = driver.getTitle();
 
         driver.get("https://etsy.com");
 
-        String etsyTitle = driver.getTitle();
+        String etsyTitleChrome = driver.getTitle();
 
         driver.navigate().back();
 
-        String googleTitle2 = driver.getTitle();
+        String googleTitleChrome2 = driver.getTitle();
 
-        StringUtility.verifyEquals(googleTitle,googleTitle2);
+        StringUtility.verifyEquals(googleTitleChrome,googleTitleChrome2);
 
         driver.navigate().forward();
 
-        String etsyTitle2 = driver.getTitle();
+        String etsyTitleChrome2 = driver.getTitle();
 
-        StringUtility.verifyEquals(etsyTitle,etsyTitle2);
+        StringUtility.verifyEquals(etsyTitleChrome,etsyTitleChrome2);
 
 
         driver.close();
 
 
-    }
-
-    @Test
-    public void navigationTest_Firefox(){
-
-        WebDriver driver = BrowserFactory.getDriver("firefox");
-        driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-
-        driver.get("https://google.com");
-
-        String googleTitle = driver.getTitle();
-
-        driver.get("https://etsy.com");
-
-        String etsyTitle = driver.getTitle();
-
-        driver.navigate().back();
-
-        String googleTitle2 = driver.getTitle();
-
-        StringUtility.verifyEquals(googleTitle,googleTitle2);
-
-        driver.navigate().forward();
-
-        String etsyTitle2 = driver.getTitle();
-
-        StringUtility.verifyEquals(etsyTitle,etsyTitle2);
-
-        driver.close();
-
-    }
-
-    @Test
-    public void navigationTest_Edge(){
+        System.out.println("------------------------------------------------------------");
 
 
-        WebDriver driver = BrowserFactory.getDriver("edge");
-        driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
-        driver.get("https://google.com");
+        WebDriver driver3 = BrowserFactory.getDriver("edge");
+        driver3.manage().window().maximize();
+        driver3.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
-        String googleTitle = driver.getTitle();
+        driver3.get("https://google.com");
 
-        driver.get("https://etsy.com");
+        String googleTitleEdge = driver3.getTitle();
 
-        String etsyTitle = driver.getTitle();
+        driver3.get("https://etsy.com");
 
-        driver.navigate().back();
+        String etsyTitleEdge = driver3.getTitle();
 
-        String googleTitle2 = driver.getTitle();
+        driver3.navigate().back();
 
-        StringUtility.verifyEquals(googleTitle,googleTitle2);
+        String googleTitleEdge2 = driver3.getTitle();
 
-        driver.navigate().forward();
+        StringUtility.verifyEquals(googleTitleEdge,googleTitleEdge2);
 
-        String etsyTitle2 = driver.getTitle();
+        driver3.navigate().forward();
 
-        StringUtility.verifyEquals(etsyTitle,etsyTitle2);
+        String etsyTitleEdge2 = driver3.getTitle();
 
-        driver.close();
+        StringUtility.verifyEquals(etsyTitleEdge,etsyTitleEdge2);
+
+        driver3.close();
+
+
+        System.out.println("------------------------------------------------------------");
+
+
+        WebDriver driver2 = BrowserFactory.getDriver("firefox");
+        driver2.manage().window().maximize();
+        driver2.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+
+        driver2.get("https://google.com");
+
+        String googleTitleFirefox = driver2.getTitle();
+
+        driver2.get("https://etsy.com");
+
+        String etsyTitleFirefox = driver2.getTitle();
+
+        driver2.navigate().back();
+
+        String googleTitleFirefox2 = driver2.getTitle();
+
+        StringUtility.verifyEquals(googleTitleFirefox,googleTitleFirefox2);
+
+        driver2.navigate().forward();
+
+        String etsyTitleFirefox2 = driver2.getTitle();
+
+        StringUtility.verifyEquals(etsyTitleFirefox,etsyTitleFirefox2);
+
+        driver2.close();
+
+
 
     }
 
